@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.to-do-list {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.to-do-list h1 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 28px;
+}
+
+.to-do-list > div {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.add-button {
+    padding: 12px 25px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #764ba2;
+}
+
+.add-button:active {
+    transform: scale(0.98);
+}
+
+ol {
+    list-style: none;
+    counter-reset: item;
+}
+
+li {
+    counter-increment: item;
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    background: #f0f0f0;
+}
+
+li::before {
+    content: counter(item);
+    background: #667eea;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.text {
+    flex: 1;
+    color: #333;
+    word-break: break-word;
+    font-size: 15px;
+}
+
+.delete-button {
+    padding: 6px 12px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.delete-button:hover {
+    background-color: #ff5252;
+}
+
+.delete-button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    .to-do-list {
+        padding: 20px;
+    }
+
+    .to-do-list h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    li {
+        flex-wrap: wrap;
+    }
+
+    .delete-button {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}
